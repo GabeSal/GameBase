@@ -13,7 +13,6 @@ var concat = require('gulp-concat')
 var environment = 'development'
 
 var jsFiles = [
-  'node_modules/phaser/build/phaser.min.js',
   'app/js/boot.js',
   'app/js/preloader.js',
   'app/js/mainMenu.js',
@@ -27,6 +26,11 @@ gulp.task('js', function () {
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(gulp.dest('build/js'))
+})
+
+gulp.task('lib', function () {
+  return gulp.src('app/js/lib/**/*')
+    .pipe(gulp.dest('build/js/lib'))
 })
 
 gulp.task('data', function () {
@@ -105,9 +109,9 @@ gulp.task('webserver', function () {
 })
 // Build task
 if (environment !== 'production') {
-  gulp.task('build', ['jshint', 'html', 'js', 'styles', 'fonts', 'images'])
+  gulp.task('build', ['jshint', 'html', 'js', 'lib', 'styles', 'fonts', 'images'])
 } else {
-  gulp.task('build', ['jshint', 'html', 'js', 'fonts', 'images'])
+  gulp.task('build', ['jshint', 'html', 'js', 'lib', 'fonts', 'images'])
 }
 // Default task
 gulp.task('default', ['jshint', 'styles', 'watch', 'webserver'])
