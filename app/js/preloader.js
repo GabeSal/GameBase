@@ -8,9 +8,49 @@ Battleship.GameState.preload = function() {
   this.load.image('player', 'img/assets/gfx/bullet.png');
   this.load.image('enemy', 'img/assets/gfx/player.png');
   this.load.image('ground', 'img/assets/gfx/ground.png');
-  this.load.image('cell', 'img/assets/gfx/cell.png');
+  this.load.image('ship2', 'img/assets/gfx/ship2.png');
+  this.load.image('ship3', 'img/assets/gfx/ship3.png');
+  this.load.image('ship4', 'img/assets/gfx/ship4.png');
+  this.load.image('ship5', 'img/assets/gfx/ship5.png');
+  this.load.image('ship6', 'img/assets/gfx/ship6.png');
 
   this.load.spritesheet('explosion', 'img/assets/gfx/explosion.png', 128, 128);
+  this.load.spritesheet('cell', 'img/assets/gfx/cells.png', 64, 64);
+};
+
+Battleship.GameState.positionData = function() {
+  this.matrix = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 2, 2],
+    [0, 5, 5, 5, 5, 5, 0, 0, 0, 0],
+    [0, 0, 0, 6, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 6, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 6, 0, 0, 0, 0, 0, 0],
+    [0, 3, 0, 6, 0, 0, 0, 0, 0, 0],
+    [0, 3, 0, 6, 0, 0, 0, 0, 0, 0],
+    [0, 3, 0, 6, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 4, 4, 4, 4, 0, 0, 0],
+  ];
+
+  this.levels.ships = [
+  {
+    'ship2': {
+      'angle': 0
+    },
+    'ship3': {
+      'angle': 90
+    },
+    'ship4': {
+      'angle': 0
+    }, 
+    'ship5': {
+      'angle': 0
+    },
+    'ship6': {
+      'angle': 90
+    }
+  }
+  ];
 };
 
 Battleship.GameState.create = function() {

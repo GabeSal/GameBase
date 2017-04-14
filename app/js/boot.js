@@ -17,3 +17,16 @@ Battleship.GameState.lastBulletShotAt = undefined;
 Battleship.GameState.cells;
 Battleship.GameState.selectedCell = null;
 Battleship.GameState.selectedCellStartPos = { x: 0, y: 0 };
+Battleship.GameState.levels = {};
+Battleship.GameState.ship2 = {};
+Battleship.GameState.ship3 = {};
+Battleship.GameState.ship4 = {};
+Battleship.GameState.ship5 = {};
+Battleship.GameState.ship6 = {};
+Battleship.GameState.gameOver = false;
+
+/* 
+  ships are objects and created with the board
+  they have an angle property
+  uses switch statements for checking the ships location
+*/
